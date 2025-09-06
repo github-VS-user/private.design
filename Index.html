@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Master3D — Private Design Notice</title>
+  <meta name="description" content="This object has been custom design and is not visible to the public." />
+  <style>
+    :root{
+      --orange-1:#FFF4E6;
+      --orange-2:#FFD7A3;
+      --orange-3:#FFB566;
+      --orange-4:#FF8A1F;
+      --orange-5:#E56F00;
+      --ink:#1b1b1f;
+      --ink-dim:#3a3a40;
+      --card-bg:#ffffff;
+      --ring: rgba(229, 111, 0, .35);
+      --shadow: 0 10px 30px rgba(0,0,0,.08), 0 6px 12px rgba(229,111,0,.08);
+      --radius: 18px;
+      --radius-sm: 10px;
+      --maxw: 780px;
+    }
+
+    /* Page */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--ink);
+      background: radial-gradient(1200px 800px at 20% 10%, var(--orange-1), transparent),
+                  radial-gradient(800px 600px at 80% 90%, var(--orange-2), transparent),
+                  linear-gradient(180deg, #fff, var(--orange-1));
+      display:grid;
+      place-items:center;
+      padding:24px;
+    }
+
+    /* Card */
+    .card{
+      width:min(100%, var(--maxw));
+      background:linear-gradient(180deg,#fff, #fff8f2);
+      border:1px solid #ffe3cc;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    /* Accent bar */
+    .bar{
+      height:8px;
+      background:linear-gradient(90deg, var(--orange-4), var(--orange-3));
+    }
+
+    /* Content */
+    .content{
+      padding: clamp(20px, 3.8vw, 40px);
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      padding:.5rem .8rem;
+      border-radius:999px;
+      background: #fff7ef;
+      border:1px solid #ffe1c7;
+      font-weight:600;
+      letter-spacing:.25px;
+      margin-bottom:16px;
+      user-select:none;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      background: var(--orange-4);
+      box-shadow: 0 0 0 6px var(--ring);
+    }
+
+    h1{
+      margin:10px 0 14px 0;
+      font-size: clamp(24px, 4.2vw, 36px);
+      line-height:1.15;
+    }
+
+    p{
+      margin:0 0 20px 0;
+      font-size: clamp(16px, 2.2vw, 18px);
+      color:var(--ink-dim);
+    }
+
+    a.link{
+      color:var(--orange-5);
+      text-decoration:none;
+      border-bottom:2px solid rgba(229,111,0,.25);
+      transition: border-color .2s ease, color .2s ease;
+      word-break:break-word;
+    }
+    a.link:hover{ color:#b55500; border-color:#b55500; }
+
+    /* Actions */
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top: 6px;
+    }
+    .btn{
+      appearance:none;
+      border:none;
+      cursor:pointer;
+      text-decoration:none;
+      font-weight:700;
+      padding:14px 18px;
+      border-radius: var(--radius-sm);
+      transition: transform .06s ease, box-shadow .2s ease, background .2s ease;
+      outline: none;
+      line-height:1;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.55rem;
+    }
+    .btn-primary{
+      color:white;
+      background: linear-gradient(180deg, var(--orange-4), var(--orange-5));
+      box-shadow: 0 6px 16px rgba(229,111,0,.25);
+    }
+    .btn-primary:hover{ box-shadow: 0 10px 26px rgba(229,111,0,.35); }
+    .btn:active{ transform: translateY(1px); }
+
+    /* Footer */
+    footer{
+      padding: 14px clamp(20px, 3.8vw, 40px) 22px;
+      background: #fffaf5;
+      border-top:1px solid #ffe3cc;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:10px;
+      color:#744200;
+      font-size:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:.6rem; font-weight:700;
+    }
+    .pill{
+      padding:.35rem .6rem; border-radius:999px; background:#fff3e6; border:1px solid #ffe1c7; font-weight:600;
+    }
+
+    /* Reduce motion preference */
+    @media (prefers-reduced-motion: reduce){
+      .btn, a.link{ transition:none }
+    }
+  </style>
+</head>
+<body>
+  <main class="card" role="main" aria-label="Private Design Notice">
+    <div class="bar" aria-hidden="true"></div>
+    <div class="content">
+      <div class="badge"><span class="dot" aria-hidden="true"></span> Private Design</div>
+      <h1>This object has been custom design, and therefore is not visible to the public.</h1>
+      <p>
+        If you want to choose or create your own, go on
+        <a class="link" href="https://master3d.net" target="_blank" rel="noopener noreferrer">https://master3d.net</a>.
+      </p>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="https://track.master3d.net" aria-label="Back to Tracker">
+          ← Back to Tracker
+        </a>
+      </div>
+    </div>
+    <footer>
+      <div class="brand">Master3D</div>
+      <div class="pill">Master3D 2025</div>
+    </footer>
+  </main>
+</body>
+</html>
